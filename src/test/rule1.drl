@@ -1,0 +1,11 @@
+package test;
+
+import net.drools.bean.*;
+
+rule "rule1"
+    when
+        $order:Order(items not contains "手机");
+        $customer:Customer(age > 20, orders contains $order);
+    then
+        System.out.println($customer.getName());
+end
