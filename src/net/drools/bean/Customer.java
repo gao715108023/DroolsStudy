@@ -7,11 +7,21 @@ import java.util.List;
  */
 public class Customer {
 
+    private String id;
+
     private String name;
 
     private int age;
 
     private List orders;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

@@ -1,0 +1,35 @@
+package test;
+dialect  "java"
+
+import java.util.List;
+import java.util.ArrayList;
+import net.drools.bean.*
+import function test.RuleTools.printInfo;
+
+function void setOrder(Customer customer, int orderSize){
+    List ls = new ArrayList();
+    for(int i = 0;i < orderSize;i++){
+        Order order = new Order();
+        ls.add(order);
+    }
+
+    customer.setOrders(ls);
+
+}
+
+
+rule "rule1"
+    when
+        $customer:Customer();
+    then
+        setOrder($customer, 5);
+        System.out.println("rule 1 customer has order size: " + $customer.getOrders().size());
+end
+
+rule "rule2"
+    when
+        $customer:Customer();
+    then
+        setOrder($customer, 10);
+        System.out.println("rule 2 customer has order size: " + $customer.getOrders().size());
+end
