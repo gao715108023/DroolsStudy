@@ -1,0 +1,54 @@
+package test;
+dialect  "java"
+
+import java.util.Date;
+import net.drools.bean.Order;
+
+declare Address
+    city : String
+    addressName : String
+end
+
+declare Person
+    name : String
+    birthday : Date
+    address : Address
+    order : Order
+end
+
+//rule "rule1"
+//    salience 2
+//    when
+//        eval(true)
+//    then
+//        Address add = new Address();
+//        add.setCity("中国上海");
+//        add.setAddressName("中国上海浦东新区");
+//
+//        Order order = new Order();
+//        order.setName("测试订单");
+//
+//        Person person = new Person();
+//        person.setName("steven.gao");
+//        person.setBirthday(new Date());
+//        person.setAddress(add);
+//        person.setOrder(order);
+//        insert(person);
+//end
+//
+//rule "rule2"
+//    salience 1
+//    when
+//        //$add:Address();
+//        $person:Person();
+//    then
+//        //System.out.println($add.getCity()+","+$add.getAddressName());
+//        System.out.println("姓名：" + $person.getName() + "\r住址："  + "\r拥有的订单：" + $person.getOrder().getName());
+//end
+
+rule "rule"
+    when
+         $person:Person();
+    then
+         System.out.println("姓名：" + $person.getName() + "\r住址："  + "\r拥有的订单：" + $person.getOrder().getName());
+end

@@ -15,6 +15,8 @@ public class Customer {
 
     private List orders;
 
+    private String gender;
+
     public String getId() {
         return id;
     }
@@ -45,5 +47,13 @@ public class Customer {
 
     public void setOrders(List orders) {
         this.orders = orders;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

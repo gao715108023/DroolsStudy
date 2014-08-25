@@ -1,0 +1,16 @@
+package test;
+dialect  "java"
+import net.drools.bean.*
+
+//query "testQuery"
+//    customer:Customer(age > 30, orders.size() > 10)
+//end
+
+query "testQuery1" (int $age, String $gender)
+    customer:Customer(age > $age, gender == $gender)
+end
+
+rule "query"
+    when
+    then
+end

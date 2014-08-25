@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import net.drools.bean.*
 import function test.RuleTools.printInfo;
 
+query "testQuery"
+    customer:Customer(age > 30, orders.size() > 10)
+end
+
 function void setOrder(Customer customer, int orderSize){
     List ls = new ArrayList();
     for(int i = 0;i < orderSize;i++){
